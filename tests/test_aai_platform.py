@@ -21,7 +21,7 @@ PLATFORMS = {
 @mock.patch("onapsdk.aai.business.platform.Platform.send_message_json")
 def test_platform_get_all(mock_send_message_json):
     mock_send_message_json.return_value = {}
-    assert len(list(Platform.get_all())) == 0
+    assert if not list(Platform.get_all()):
 
     mock_send_message_json.return_value = PLATFORMS
     platforms = list(Platform.get_all())
