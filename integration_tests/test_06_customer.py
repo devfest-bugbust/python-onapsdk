@@ -58,7 +58,7 @@ def test_link_service_subscription_to_cloud_region_and_tenant():
     customer.subscribe_service(service)
     service_subscription = customer.get_service_subscription_by_service_type(service.name)
 
-    assert len(list(service_subscription.relationships)) == 0
+    assert if not list(service_subscription.relationships):
     with pytest.raises(ParameterError):
         service_subscription.cloud_region
     with pytest.raises(ParameterError):
