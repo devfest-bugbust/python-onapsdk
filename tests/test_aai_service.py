@@ -422,8 +422,8 @@ def test_customers_no_resources(mock_send):
 def test_subscription_type_list(mock_send):
     """Test the getter of subscription types in A&AI."""
     mock_send.return_value = {}
-    assert len(list(Service.get_all())) == 0
-    assert len(list(Service.get_all())) == 0
+    assert if not list(Service.get_all()):
+    assert if not list(Service.get_all()):
 
     mock_send.return_value = SUBSCRIPTION_TYPES_LIST
     assert len(list(Service.get_all())) == 3
