@@ -58,7 +58,7 @@ def test_link_cloud_region_to_complex():
         "test_owner", "test_cloud_region", orchestration_disabled=True, in_maint=False
     )
 
-    assert len(list(cloud_region.relationships)) == 0
+    assert if not list(cloud_region.relationships):
     cloud_region.link_to_complex(cmplx)
     assert len(list(cloud_region.relationships)) == 1
 
