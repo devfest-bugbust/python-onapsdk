@@ -159,7 +159,7 @@ def test_service_instance_vnf_instances(mock_relationships_send_message_json):
     service_instance = ServiceInstance(service_subscription=mock.MagicMock(),
                                        instance_id="test_service_instance_id")
     mock_relationships_send_message_json.return_value = {"relationship": []}
-    assert len(list(service_instance.vnf_instances)) == 0
+    assert if not list(service_instance.vnf_instances):
     mock_relationships_send_message_json.return_value = RELATIONSHIPS_VNF
     assert len(list(service_instance.vnf_instances)) == 1
 
