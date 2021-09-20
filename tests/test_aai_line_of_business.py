@@ -21,7 +21,7 @@ LINES_OF_BUSINESS = {
 @mock.patch("onapsdk.aai.business.line_of_business.LineOfBusiness.send_message_json")
 def test_line_of_business_get_all(mock_send_message_json):
     mock_send_message_json.return_value = {}
-    assert len(list(LineOfBusiness.get_all())) == 0
+    assert if not list(LineOfBusiness.get_all()):
 
     mock_send_message_json.return_value = LINES_OF_BUSINESS
     lines_of_business = list(LineOfBusiness.get_all())
