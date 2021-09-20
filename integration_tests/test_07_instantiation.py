@@ -149,7 +149,7 @@ def test_a_la_carte_vl_instantiation():
 
     # Service instantiation
     service._distributed = True
-    assert len(list(service_subscription.service_instances)) == 0
+    assert if not list(service_subscription.service_instances):
     service_instantiation_request = ServiceInstantiation.instantiate_so_ala_carte(
         service,
         cloud_region,
