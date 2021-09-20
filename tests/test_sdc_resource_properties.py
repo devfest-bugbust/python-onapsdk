@@ -830,7 +830,7 @@ def test_service_properties(mock_send, mock_send_json):
     service.unique_identifier = "toto"
 
     mock_send_json.return_value = {}
-    assert len(list(service.properties)) == 0
+    assert if not list(service.properties):
 
     mock_send_json.return_value = PROPERTIES
     properties_list = list(service.properties)
