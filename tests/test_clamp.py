@@ -279,7 +279,7 @@ def test_not_add_operational_policy_parameter_error(mock_send_message_json):
         loop.add_operational_policy(policy_type="FrequencyLimiter", policy_version="not_correct")
         mock_send_message_json.assert_called_once_with('PUT', 'Create Operational Policy',
             (f"{loop.base_url()}/loop/addOperationaPolicy/{loop.name}/policyModel/FrequencyLimiter/not_correct"))
-        assert len(loop.details["operationalPolicies"]) == 0
+        assert if not loop.details["operationalPolicies"]:
         assert exc.type is ParameterError
 
 @mock.patch.object(LoopInstance, 'send_message_json')
