@@ -467,7 +467,7 @@ def test_cloud_regions(mock_send):
 
     mock_send.return_value = {}
     cloud_regions = list(CloudRegion.get_all())
-    assert len(cloud_regions) == 0
+    assert if not cloud_regions:
 
     with pytest.raises(StopIteration):
         cloud_region = next(CloudRegion.get_all())
