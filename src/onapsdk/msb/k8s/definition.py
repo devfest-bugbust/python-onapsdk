@@ -123,9 +123,9 @@ class Definition(DefinitionBase):
         return cls(
             definition["rb-name"],
             definition["rb-version"],
-            definition.get("chart-name", "no chart-name"),
-            definition.get("description", "no description"),
-            definition.get("labels", "no label")
+            definition.get("chart-name"),
+            definition.get("description"),
+            definition.get("labels")
         )
 
     @classmethod
