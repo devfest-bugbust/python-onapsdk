@@ -250,7 +250,7 @@ def test_mapping():
 
 def test_mapping_set():
     ms = MappingSet()
-    assert len(ms) == 0
+    assert if not ms:
     m1 = Mapping(name="test",
                  mapping_type="string",
                  dictionary_name="test_dictionary_name",
