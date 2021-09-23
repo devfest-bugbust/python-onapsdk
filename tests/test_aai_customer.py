@@ -263,7 +263,7 @@ def test_customers_get_all(mock_send):
     """Test get_all Customer class method."""
     mock_send.return_value = {}
     customers = list(Customer.get_all())
-    assert len(customers) == 0
+    assert if not customers:
 
     mock_send.return_value = CUSTOMERS
     customers = list(Customer.get_all())
@@ -313,7 +313,7 @@ def test_customer_service_subscription_cloud_region(mock_cloud_region, mock_send
 
     mock_send_serv_sub.return_value = {}
     relationships = list(service_subscription.relationships)
-    assert len(relationships) == 0
+    assert if not relationships:
     with pytest.raises(ParameterError):
         service_subscription.cloud_region
     with pytest.raises(ParameterError):
