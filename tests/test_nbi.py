@@ -351,7 +351,7 @@ def test_service_get_all(mock_service_specification_get_by_id,
                          mock_customer_get_by_id,
                          mock_service_send_message):
     mock_service_send_message.return_value = []
-    assert len(list(Service.get_all())) == 0
+    assert if not list(Service.get_all()):
     mock_service_send_message.return_value = SERVICES
     services_list = list(Service.get_all())
     assert len(services_list) == 3
