@@ -242,7 +242,7 @@ def test_definition_get_all_profiles(mock_send_message_json):
         description="test_description",
         labels={}
     )
-    assert len(list(deff.get_all_profiles())) == 0
+    assert if not list(deff.get_all_profiles()):
 
     mock_send_message_json.return_value = PROFILES
     profiles = list(deff.get_all_profiles())
