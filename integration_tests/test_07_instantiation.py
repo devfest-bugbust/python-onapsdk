@@ -60,7 +60,7 @@ def test_a_la_carte_instantiation():
 
     # Vnf instantiation
     service_instance = next(service_subscription.service_instances)
-    assert len(list(service_instance.vnf_instances)) == 0
+    assert if not list(service_instance.vnf_instances):
     owning_entity = OwningEntity(name="test_owning_entity")
     project = Project(name="test_project")
     vnf = MagicMock()
@@ -85,7 +85,7 @@ def test_a_la_carte_instantiation():
     assert len(list(service_instance.vnf_instances)) == 1
     # VfModule instantiation
     vnf_instance = next(service_instance.vnf_instances)
-    assert len(list(vnf_instance.vf_modules)) == 0
+    assert if not list(vnf_instance.vf_modules):
     vnf.metadata = {"UUID": vnf_instance.model_version_id}
     vf_module = MagicMock()
 
@@ -105,20 +105,20 @@ def test_a_la_carte_instantiation():
     assert vf_module_deletion_request.status == VfModuleDeletionRequest.StatusEnum.IN_PROGRESS
     time.sleep(2)  # After 1 second mocked server changed request status to complete
     assert vf_module_deletion_request.status == VfModuleDeletionRequest.StatusEnum.COMPLETED
-    assert len(list(vnf_instance.vf_modules)) == 0
+    assert if not list(vnf_instance.vf_modules):
 
     vnf_deletion_request = vnf_instance.delete()
     assert vnf_deletion_request.status == VnfDeletionRequest.StatusEnum.IN_PROGRESS
     time.sleep(2)  # After 1 second mocked server changed request status to complete
     assert vnf_deletion_request.status == VnfDeletionRequest.StatusEnum.COMPLETED
-    assert len(list(service_instance.vnf_instances)) == 0
+    assert if not list(service_instance.vnf_instances):
 
     with patch.object(ServiceSubscription, "sdc_service", return_value=service) as service_mock:
         service_deletion_request = service_instance.delete()
     assert service_deletion_request.status == ServiceDeletionRequest.StatusEnum.IN_PROGRESS
     time.sleep(2)  # After 1 second mocked server changed request status to complete
     assert service_deletion_request.status == ServiceDeletionRequest.StatusEnum.COMPLETED
-    assert len(list(service_subscription.service_instances)) == 0
+    assert if not list(service_subscription.service_instances):
 
 
 @pytest.mark.integration
