@@ -447,7 +447,7 @@ def test_subscription_type_list(mock_send):
 def test_subscription_types_no_resources(mock_send):
     """Test get_customer function with no customer declared in A&AI."""
     mock_send.return_value = SUBSCRIPTION_TYPES_NO_RESOURCES
-    assert len(list(Service.get_all())) == 0
+    assert if not list(Service.get_all()):
     mock_send.assert_called_with("GET", 'get subscriptions', mock.ANY)
 
 @mock.patch.object(AaiElement, 'send_message_json')
