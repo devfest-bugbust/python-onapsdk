@@ -21,7 +21,7 @@ PROJECTS = {
 @mock.patch("onapsdk.aai.business.project.Project.send_message_json")
 def test_project_get_all(mock_send_message_json):
     mock_send_message_json.return_value = {}
-    assert len(list(Project.get_all())) == 0
+    assert if not list(Project.get_all()):
 
     mock_send_message_json.return_value = PROJECTS
     projects = list(Project.get_all())

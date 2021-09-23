@@ -211,7 +211,7 @@ def test_vnf_instance_vf_modules(mock_vnf_instance_send_message_json):
                                is_closed_loop_disabled=True)
     mock_vnf_instance_send_message_json.return_value = {"vf-module": []}
     vf_modules = list(vnf_instance.vf_modules)
-    assert len(vf_modules) == 0
+    assert if not vf_modules:
 
     mock_vnf_instance_send_message_json.return_value = VF_MODULE
     vf_modules = list(vnf_instance.vf_modules)

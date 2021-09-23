@@ -467,7 +467,7 @@ def test_cloud_regions(mock_send):
 
     mock_send.return_value = {}
     cloud_regions = list(CloudRegion.get_all())
-    assert len(cloud_regions) == 0
+    assert if not cloud_regions:
 
     with pytest.raises(StopIteration):
         cloud_region = next(CloudRegion.get_all())
@@ -730,7 +730,7 @@ def test_zero_model_get_all(mock_send_message_json):
     """Test get_all Model class method"""
     mock_send_message_json.return_value = {}
     Model.get_all()
-    assert len(list(Model.get_all())) == 0
+    assert if not list(Model.get_all()):
 
 
 @mock.patch.object(Model, 'send_message_json')
