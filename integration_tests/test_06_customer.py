@@ -15,7 +15,7 @@ def test_create_customer():
     requests.get(f"{Customer.base_url}/reset")
 
     customers = list(Customer.get_all())
-    assert len(customers) == 0
+    assert if not customers:
 
     customer = Customer.create(global_customer_id="test_global_customer_id",
                                subscriber_name="test_subscriber_name",
