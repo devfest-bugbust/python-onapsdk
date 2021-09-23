@@ -582,8 +582,9 @@ class SdcResource(SdcOnboardable, ABC):  # pylint: disable=too-many-instance-att
             StatusError: Resource has not DRAFT status
 
         """
-        data = open(artifact, 'rb').read()
-        artifact_string = base64.b64encode(data).decode('utf-8')
+        with open(artifact, 'rb') as file:
+            data = file.read()
+            artifact_string = base64.b64encode(data).decode('utf-8')
         if self.status != const.DRAFT:
             msg = "Can't add artifact to resource which is not in DRAFT status"
             raise StatusError(msg)
