@@ -730,7 +730,7 @@ def test_zero_model_get_all(mock_send_message_json):
     """Test get_all Model class method"""
     mock_send_message_json.return_value = {}
     Model.get_all()
-    assert len(list(Model.get_all())) == 0
+    assert if not list(Model.get_all()):
 
 
 @mock.patch.object(Model, 'send_message_json')
