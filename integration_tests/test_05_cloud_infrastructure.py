@@ -28,7 +28,7 @@ def test_cloud_region_get_all():
 def test_complex_get_all():
     requests.get(f"{Complex.base_url}/reset")
     complexes = list(Complex.get_all())
-    assert len(complexes) == 0
+    assert if not complexes:
 
     cmplx: Complex = Complex.create(
         name="test_complex",
