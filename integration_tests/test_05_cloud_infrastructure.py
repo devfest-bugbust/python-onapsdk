@@ -69,7 +69,7 @@ def test_cloud_region_tenants():
     cloud_region: CloudRegion = CloudRegion.create(
         "test_owner", "test_cloud_region", orchestration_disabled=True, in_maint=False
     )
-    assert len(list(cloud_region.tenants)) == 0
+    assert if not list(cloud_region.tenants):
     cloud_region.add_tenant(tenant_id="test_tenant_id", tenant_name="test_tenant_name", tenant_context="test_tenant_context")
     assert len(list(cloud_region.tenants)) == 1
     tenant = cloud_region.get_tenant(tenant_id="test_tenant_id")
