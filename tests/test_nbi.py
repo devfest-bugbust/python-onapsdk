@@ -397,7 +397,7 @@ def test_service_get_all(mock_service_specification_get_by_id,
 @mock.patch.object(ServiceOrder, "send_message_json")
 def test_service_order(mock_service_order_send_message):
     mock_service_order_send_message.return_value = []
-    assert len(list(ServiceOrder.get_all())) == 0
+    assert if not list(ServiceOrder.get_all()):
 
     mock_service_order_send_message.return_value = SERVICE_ORDERS
     service_orders = list(ServiceOrder.get_all())
